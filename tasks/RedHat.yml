@@ -31,7 +31,7 @@
     - yum-utils
     
 - name: Configure php version
-  shell: yum-config-manager --enable remi-{{ php_version }}
+  shell: yum-config-manager --enable remi-php70
     
 - name: "RedHat | Install zabbix-web-{{ database_type }}"
   yum:
