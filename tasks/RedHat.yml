@@ -29,7 +29,7 @@
     mode: 0644
   when: zabbix_vhost
   notify:
-    - restart apache
+    - restart nginx
   tags:
     - zabbix-web
     - init
@@ -45,7 +45,7 @@
     state: link
   when: zabbix_vhost
   notify:
-    - restart apache
+    - restart nginx
   tags:
     - zabbix-server
     - init
