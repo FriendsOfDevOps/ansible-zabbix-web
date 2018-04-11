@@ -1,5 +1,6 @@
 ---
-# defaults file for zabbix-web
+
+php_version: php70
 
 zabbix_version: 3.5
 zabbix_repo: zabbix
