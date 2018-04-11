@@ -22,7 +22,7 @@
     
 - name: "RedHat | install nginx vhost"
   template:
-    src: apache_vhost.conf.j2
+    src: nginx_vhost.conf.j2
     dest: /etc/nginx/sites-available/zabbix.conf
     owner: "{{ apache_user }}"
     group: "{{ apache_group }}"
@@ -34,7 +34,7 @@
     - zabbix-web
     - init
     - config
-    - apache
+    - nginx
 
 - name: "RedHat | enable nginx vhost"
   file:
