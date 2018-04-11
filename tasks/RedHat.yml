@@ -12,7 +12,20 @@
   with_items: "{{ zabbix_repo_yum }}"
   tags:
     - zabbix-web
-
+    
+- name: Install remi repository
+  shell: rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+    
+- name: "RedHat | Install yum-utils"
+  yum:
+    pkg: yum-utils
+    state: present
+  tags:
+    - yum-utils
+    
+- name: Configure php version
+  shell: yum-config-manager --enable remi-php70
+    
 - name: "RedHat | Install zabbix-web-{{ database_type }}"
   yum:
     pkg: zabbix-web-{{ database_type }}
