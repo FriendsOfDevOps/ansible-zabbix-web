@@ -20,15 +20,15 @@
   tags:
     - zabbix-web
 
-- name: "RedHat | Install apache vhost"
+- name: "RedHat | Install nginx vhost"
   template:
-    src: apache_vhost.conf.j2
-    dest: /etc/httpd/conf.d/zabbix.conf
+    src: nginx_vhost.conf.j2
+    dest: /etc/nginx/conf.d/zabbix.conf
     owner: "{{ apache_user }}"
     group: "{{ apache_group }}"
     mode: 0644
   when: zabbix_vhost
   notify:
-    - restart apache
+    - restart nginx
   tags:
     - zabbix-server
